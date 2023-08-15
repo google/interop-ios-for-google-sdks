@@ -19,6 +19,8 @@ Pod::Spec.new do |s|
   }
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'RecaptchaEnterprise/Interop/*.[hm]'
-  s.public_header_files = 'RecaptchaEnterprise/Interop/*.h'
+  base_dir = "RecaptchaEnterprise/RecaptchaInterop/"
+
+  s.source_files = base_dir + '**/*.[hm]'
+  s.public_header_files = base_dir + 'Public/RecaptchaInterop/*.h'
 end
