@@ -30,7 +30,7 @@ let package = Package(
     .target(
       name: "RecaptchaInterop",
       path: "RecaptchaEnterprise/RecaptchaInterop",
-      publicHeadersPath: "."
+      publicHeadersPath: "Public"
     ),
   ]
 )
