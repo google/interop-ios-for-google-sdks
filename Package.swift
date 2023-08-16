@@ -32,5 +32,19 @@ let package = Package(
       path: "RecaptchaEnterprise/RecaptchaInterop",
       publicHeadersPath: "Public"
     ),
+    .testTarget(
+      name: "SwiftImportsTest",
+      dependencies: [
+        "RecaptchaInterop",
+      ],
+      path: "SwiftPMTests/SwiftImportsTest"
+    ),
+    .testTarget(
+      name: "ObjCImportsTest",
+      dependencies: [
+        "RecaptchaInterop",
+      ],
+      path: "SwiftPMTests/ObjCImportsTest"
+    ),
   ]
 )
