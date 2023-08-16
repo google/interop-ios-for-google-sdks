@@ -14,4 +14,6 @@
 
 import Foundation
 
+#pragma mark - reCAPTCHA Enterprise Interop
+
 import RecaptchaInterop

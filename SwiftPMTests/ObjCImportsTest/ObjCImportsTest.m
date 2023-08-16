@@ -14,4 +14,7 @@
 
 @import Foundation;
 
+#pragma mark - reCAPTCHA Enterprise Interop
+
 @import RecaptchaInterop;
+#import <RecaptchaInterop/RecaptchaInterop.h>
