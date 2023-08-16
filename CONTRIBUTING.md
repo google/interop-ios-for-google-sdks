@@ -1,6 +1,10 @@
 # How to Contribute
 
-We would love to accept your patches and contributions to this project.
+Since this repository is for Google-internal use only, we encourage you to first
+discuss proposed changes via
+[support](https://github.com/google/interop-ios-for-google-sdks#support).
+However, patches and contributions to this project may be accepted by following
+the guidelines below.
 
 ## Before you begin
 
