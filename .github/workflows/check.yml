@@ -2,8 +2,6 @@ name: check
 
 on:
   pull_request:
-    paths:
-    - '.github/workflows/check.yml'
   push:
     branches: main
 
@@ -17,11 +15,11 @@ jobs:
     env:
       MINT_PATH: ${{ github.workspace }}/mint
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
-    - uses: actions/setup-python@v3
+    - uses: actions/setup-python@v4
       with:
-        python-version: 3.6
+        python-version: 3.11
 
     - name: Cache Mint packages
       uses: actions/cache@v3
