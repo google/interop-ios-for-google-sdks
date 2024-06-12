@@ -22,11 +22,23 @@ let package = Package(
   platforms: [.iOS(.v11), .macCatalyst(.v13), .macOS(.v10_13), .tvOS(.v12), .watchOS(.v7)],
   products: [
     .library(
+      name: "FirebaseAppCheckInterop",
+      targets: ["FirebaseAppCheckInterop"]
+    ),
+    .library(
       name: "RecaptchaInterop",
       targets: ["RecaptchaInterop"]
     ),
   ],
   targets: [
+    .target(
+      name: "FirebaseAppCheckInterop",
+      path: "Firebase/FirebaseAppCheckInterop/Sources",
+      exclude: [
+        "CMakeLists.txt",
+      ],
+      publicHeadersPath: "Public"
+    ),
     .target(
       name: "RecaptchaInterop",
       path: "RecaptchaEnterprise/RecaptchaInterop",
@@ -36,6 +48,7 @@ let package = Package(
       name: "SwiftImportsTest",
       dependencies: [
         "RecaptchaInterop",
+        "FirebaseAppCheckInterop",
       ],
       path: "SwiftPMTests/SwiftImportsTest"
     ),
@@ -43,6 +56,7 @@ let package = Package(
       name: "ObjCImportsTest",
       dependencies: [
         "RecaptchaInterop",
+        "FirebaseAppCheckInterop",
       ],
       path: "SwiftPMTests/ObjCImportsTest"
     ),
