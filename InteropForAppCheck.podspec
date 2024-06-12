@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.name             = 'FirebaseAppCheckInterop'
-  s.version          = '101.0.0'
+  s.name             = 'InteropForFirebaseAppCheck'
+  s.version          = '100.1.0'
   s.summary          = 'Interfaces that allow other Firebase SDKs to use AppCheck functionality.'
 
   s.description      = <<-DESC
