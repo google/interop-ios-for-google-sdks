@@ -1,5 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'InteropForFirebaseAppCheck'
+  s.module_name      = 'FirebaseAppCheckInterop'
   s.version          = '100.1.0'
   s.summary          = 'Interfaces that allow other Firebase SDKs to use AppCheck functionality.'
 
@@ -16,7 +17,7 @@ Pod::Spec.new do |s|
   # NOTE that these should not be used externally, this is for Firebase pods to depend on each
   # other.
   s.source           = {
-    :git => 'https://github.com/firebase/firebase-ios-sdk.git',
+    :git => 'https://github.com/google/interop-ios-for-google-sdks.git',
     :tag => 'CocoaPods-' + s.version.to_s
   }
   s.social_media_url = 'https://twitter.com/Firebase'
@@ -31,7 +32,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = tvos_deployment_target
   s.watchos.deployment_target = watchos_deployment_target
 
-  base_dir = "Firebase/FirebaseAppCheckInterop/"
+  base_dir = "Firebase/InteropForFirebaseAppCheck/"
 
   s.source_files = base_dir + 'Sources/**/*.[hm]'
   s.public_header_files = base_dir + 'Sources/Public/FirebaseAppCheckInterop/*.h'

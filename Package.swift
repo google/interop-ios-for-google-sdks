@@ -33,7 +33,7 @@ let package = Package(
   targets: [
     .target(
       name: "FirebaseAppCheckInterop",
-      path: "Firebase/FirebaseAppCheckInterop/Sources",
+      path: "Firebase/InteropForFirebaseAppCheck/Sources",
       exclude: [
         "CMakeLists.txt",
       ],
@@ -47,16 +47,16 @@ let package = Package(
     .testTarget(
       name: "SwiftImportsTest",
       dependencies: [
-        "RecaptchaInterop",
         "FirebaseAppCheckInterop",
+        "RecaptchaInterop",
       ],
       path: "SwiftPMTests/SwiftImportsTest"
     ),
     .testTarget(
       name: "ObjCImportsTest",
       dependencies: [
-        "RecaptchaInterop",
         "FirebaseAppCheckInterop",
+        "RecaptchaInterop",
       ],
       path: "SwiftPMTests/ObjCImportsTest"
     ),
