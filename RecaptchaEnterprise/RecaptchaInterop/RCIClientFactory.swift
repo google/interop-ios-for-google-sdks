@@ -20,7 +20,6 @@ import Foundation
 
 /// Interface to interact with reCAPTCHA and retrieve a reCAPTCHA Client.
 public enum RCIClientFactory {
-  
   /// Builds a new reCAPTCHA Client for the given Site Key.
   ///
   /// The SDK accepts one Site Key. Passing a different Site Key will throw an exception.
