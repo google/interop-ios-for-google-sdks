@@ -14,9 +14,9 @@
 
 import Foundation
 
-/// Action intended to be protected by reCAPTCHA. This object should be passed when retrieving a token.
+/// Action intended to be protected by reCAPTCHA. This object should be passed when retrieving a
+/// token.
 public struct RCIAction {
-
   /// A String representing the action.
   public let action: String
 

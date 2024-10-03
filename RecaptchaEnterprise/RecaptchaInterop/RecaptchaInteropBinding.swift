@@ -17,37 +17,34 @@ import Foundation
 
   import RecaptchaEnterprise
 
-  extension RCIAction {
-
+  public extension RCIAction {
     /// Creates a RecaptchaAction from the RCIAction instance.
-    public func toRecaptchaAction() -> RecaptchaAction {
-      return RecaptchaAction.custom(self.action)
+    func toRecaptchaAction() -> RecaptchaAction {
+      return RecaptchaAction.custom(action)
     }
   }
 
   extension RecaptchaClient: RCIClientProtocol {
-
     @available(iOS 13, *)
     public func execute(_ action: RCIAction, withTimeout timeout: Double) async throws -> String {
-      return try await self.execute(withAction: action.toRecaptchaAction(), withTimeout: timeout)
+      return try await execute(withAction: action.toRecaptchaAction(), withTimeout: timeout)
     }
 
     @available(iOS 13, *)
     public func execute(_ action: RCIAction) async throws -> String {
-      return try await self.execute(withAction: action.toRecaptchaAction())
+      return try await execute(withAction: action.toRecaptchaAction())
     }
 
-    public func execute(
-      _ action: RCIAction, withTimeout timeout: Double,
-      completion: @escaping (String?, (any Error)?) -> Void
-    ) {
-      self.execute(
-        withAction: action.toRecaptchaAction(), withTimeout: timeout, completion: completion)
+    public func execute(_ action: RCIAction, withTimeout timeout: Double,
+                        completion: @escaping (String?, (any Error)?) -> Void) {
+      execute(
+        withAction: action.toRecaptchaAction(), withTimeout: timeout, completion: completion
+      )
     }
 
     public func execute(_ action: RCIAction, completion: @escaping (String?, (any Error)?) -> Void)
     {
-      self.execute(withAction: action.toRecaptchaAction(), completion: completion)
+      execute(withAction: action.toRecaptchaAction(), completion: completion)
     }
   }
 

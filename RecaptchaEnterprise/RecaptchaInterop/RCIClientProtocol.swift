@@ -16,7 +16,6 @@ import Foundation
 
 /// Interface to interact with reCAPTCHA.
 public protocol RCIClientProtocol {
-
   /// Executes reCAPTCHA on a user action.
   ///
   /// It is suggested the usage of 10 seconds for the timeout. The minimum value
@@ -26,9 +25,8 @@ public protocol RCIClientProtocol {
   ///     - action The user action to protect.
   ///     - timeout: Timeout for execute in milliseconds.
   ///     - completion: Callback function to return the execute result.
-  func execute(
-    _ action: RCIAction, withTimeout timeout: Double,
-    completion: @escaping (String?, Error?) -> Void)
+  func execute(_ action: RCIAction, withTimeout timeout: Double,
+               completion: @escaping (String?, Error?) -> Void)
 
   /// Executes reCAPTCHA on a user action.
   ///
@@ -64,7 +62,6 @@ public protocol RCIClientProtocol {
 
 /// Errors throw by the Recaptcha Interop module
 public enum RCIError: Error {
-
   /// In case a method is called without the RecaptchaEnterprise library being imported.
   case recaptchaEnterpriseNotImported
 }
