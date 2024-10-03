@@ -15,35 +15,40 @@ import Foundation
 
 #if canImport(RecaptchaEnterprise)
 
-import RecaptchaEnterprise
+  import RecaptchaEnterprise
 
-public extension RCIAction {
-    
+  extension RCIAction {
+
     /// Creates a RecaptchaAction from the RCIAction instance.
     public func toRecaptchaAction() -> RecaptchaAction {
-        return RecaptchaAction.custom(self.action)
+      return RecaptchaAction.custom(self.action)
     }
-}
+  }
 
-extension RecaptchaClient: RCIClientProtocol {
-    
+  extension RecaptchaClient: RCIClientProtocol {
+
     @available(iOS 13, *)
     public func execute(_ action: RCIAction, withTimeout timeout: Double) async throws -> String {
-        return try await self.execute(withAction: action.toRecaptchaAction(), withTimeout: timeout)
+      return try await self.execute(withAction: action.toRecaptchaAction(), withTimeout: timeout)
     }
-    
+
     @available(iOS 13, *)
     public func execute(_ action: RCIAction) async throws -> String {
-        return try await self.execute(withAction: action.toRecaptchaAction())
+      return try await self.execute(withAction: action.toRecaptchaAction())
     }
-    
-    public func execute(_ action: RCIAction, withTimeout timeout: Double, completion: @escaping (String?, (any Error)?) -> Void) {
-        self.execute(withAction: action.toRecaptchaAction(), withTimeout: timeout, completion: completion)
+
+    public func execute(
+      _ action: RCIAction, withTimeout timeout: Double,
+      completion: @escaping (String?, (any Error)?) -> Void
+    ) {
+      self.execute(
+        withAction: action.toRecaptchaAction(), withTimeout: timeout, completion: completion)
     }
-    
-    public func execute(_ action: RCIAction, completion: @escaping (String?, (any Error)?) -> Void) {
-        self.execute(withAction: action.toRecaptchaAction(), completion: completion)
+
+    public func execute(_ action: RCIAction, completion: @escaping (String?, (any Error)?) -> Void)
+    {
+      self.execute(withAction: action.toRecaptchaAction(), completion: completion)
     }
-}
+  }
 
 #endif

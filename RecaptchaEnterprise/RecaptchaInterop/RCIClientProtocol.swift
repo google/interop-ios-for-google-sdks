@@ -16,53 +16,55 @@ import Foundation
 
 /// Interface to interact with reCAPTCHA.
 public protocol RCIClientProtocol {
-    
-    /// Executes reCAPTCHA on a user action.
-    ///
-    /// It is suggested the usage of 10 seconds for the timeout. The minimum value
-    /// is 5 seconds.
-    ///
-    /// - Parameters:
-    ///     - action The user action to protect.
-    ///     - timeout: Timeout for execute in milliseconds.
-    ///     - completion: Callback function to return the execute result.
-    func execute(_ action: RCIAction, withTimeout timeout: Double, completion: @escaping (String?, Error?) -> Void)
-    
-    /// Executes reCAPTCHA on a user action.
-    ///
-    /// This method will throw a timeout exception after 10 seconds.
-    ///
-    /// - Parameters:
-    ///     - action The user action to protect.
-    ///     - completion: Callback function to return the execute result.
-    func execute(_ action: RCIAction, completion: @escaping (String?, Error?) -> Void)
-    
-    /// Executes reCAPTCHA on a user action.
-    ///
-    /// It is suggested the usage of 10 seconds for the timeout. The minimum value
-    /// is 5 seconds.
-    ///
-    /// - Parameters:
-    ///     - action The user action to protect.
-    ///     - timeout: Timeout for execute in milliseconds.
-    ///     - completion: Callback function to return the execute result.
-    @available(iOS 13, *)
-    func execute(_ action: RCIAction, withTimeout timeout:Double) async throws -> String
-    
-    /// Executes reCAPTCHA on a user action.
-    ///
-    /// This method will throw a timeout exception after 10 seconds.
-    ///
-    /// - Parameters:
-    ///     - action The user action to protect.
-    ///     - completion: Callback function to return the execute result.
-    @available(iOS 13, *)
-    func execute(_ action: RCIAction) async throws -> String
+
+  /// Executes reCAPTCHA on a user action.
+  ///
+  /// It is suggested the usage of 10 seconds for the timeout. The minimum value
+  /// is 5 seconds.
+  ///
+  /// - Parameters:
+  ///     - action The user action to protect.
+  ///     - timeout: Timeout for execute in milliseconds.
+  ///     - completion: Callback function to return the execute result.
+  func execute(
+    _ action: RCIAction, withTimeout timeout: Double,
+    completion: @escaping (String?, Error?) -> Void)
+
+  /// Executes reCAPTCHA on a user action.
+  ///
+  /// This method will throw a timeout exception after 10 seconds.
+  ///
+  /// - Parameters:
+  ///     - action The user action to protect.
+  ///     - completion: Callback function to return the execute result.
+  func execute(_ action: RCIAction, completion: @escaping (String?, Error?) -> Void)
+
+  /// Executes reCAPTCHA on a user action.
+  ///
+  /// It is suggested the usage of 10 seconds for the timeout. The minimum value
+  /// is 5 seconds.
+  ///
+  /// - Parameters:
+  ///     - action The user action to protect.
+  ///     - timeout: Timeout for execute in milliseconds.
+  ///     - completion: Callback function to return the execute result.
+  @available(iOS 13, *)
+  func execute(_ action: RCIAction, withTimeout timeout: Double) async throws -> String
+
+  /// Executes reCAPTCHA on a user action.
+  ///
+  /// This method will throw a timeout exception after 10 seconds.
+  ///
+  /// - Parameters:
+  ///     - action The user action to protect.
+  ///     - completion: Callback function to return the execute result.
+  @available(iOS 13, *)
+  func execute(_ action: RCIAction) async throws -> String
 }
 
 /// Errors throw by the Recaptcha Interop module
 public enum RCIError: Error {
-    
-    /// In case a method is called without the RecaptchaEnterprise library being imported.
-    case recaptchaEnterpriseNotImported
+
+  /// In case a method is called without the RecaptchaEnterprise library being imported.
+  case recaptchaEnterpriseNotImported
 }

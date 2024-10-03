@@ -16,18 +16,18 @@ import Foundation
 
 /// Action intended to be protected by reCAPTCHA. This object should be passed when retrieving a token.
 public struct RCIAction {
-    
-    /// A String representing the action.
-    public let action: String
-    
-    /// Indicates that the protected action is a Login workflow.
-    public static let login = RCIAction(action: "login")
-    
-    /// Indicates that the protected action is a Signup workflow.
-    public static let signup = RCIAction(action: "signup")
-    
-    /// Creates a custom action from a String.
-    public static func custom(withAction action: String) -> RCIAction {
-        return RCIAction(action: action)
-    }
+
+  /// A String representing the action.
+  public let action: String
+
+  /// Indicates that the protected action is a Login workflow.
+  public static let login = RCIAction(action: "login")
+
+  /// Indicates that the protected action is a Signup workflow.
+  public static let signup = RCIAction(action: "signup")
+
+  /// Creates a custom action from a String.
+  public static func custom(withAction action: String) -> RCIAction {
+    return RCIAction(action: action)
+  }
 }
