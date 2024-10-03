@@ -14,6 +14,10 @@
 
 import Foundation
 
+#if canImport(RecaptchaEnterprise)
+import RecaptchaEnterprise
+#endif
+
 /// Interface to interact with reCAPTCHA and retrieve a reCAPTCHA Client.
 public enum RCIClientFactory {
     

@@ -25,11 +25,14 @@ public extension RCIAction {
     }
 }
 
-public extension RecaptchaClient: RCARecaptchaClientProtocol {
+extension RecaptchaClient: RCIClientProtocol {
+    
+    @available(iOS 13, *)
     public func execute(_ action: RCIAction, withTimeout timeout: Double) async throws -> String {
         return try await self.execute(withAction: action.toRecaptchaAction(), withTimeout: timeout)
     }
     
+    @available(iOS 13, *)
     public func execute(_ action: RCIAction) async throws -> String {
         return try await self.execute(withAction: action.toRecaptchaAction())
     }
