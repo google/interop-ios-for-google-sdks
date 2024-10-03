@@ -21,6 +21,5 @@ Pod::Spec.new do |s|
 
   base_dir = "RecaptchaEnterprise/RecaptchaInterop/"
 
-  s.source_files = base_dir + '**/*.[hm]'
-  s.public_header_files = base_dir + 'Public/RecaptchaInterop/*.h'
+  s.source_files = base_dir + '**/*.[swift]'
 end

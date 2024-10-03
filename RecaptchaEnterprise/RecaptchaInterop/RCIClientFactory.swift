@@ -15,7 +15,7 @@
 import Foundation
 
 /// Interface to interact with reCAPTCHA and retrieve a reCAPTCHA Client.
-enum RCIClientFactory {
+public enum RCIClientFactory {
     
     /// Builds a new reCAPTCHA Client for the given Site Key and timeout.
     ///
@@ -31,7 +31,7 @@ enum RCIClientFactory {
     ///     - timeout: Timeout for getClient in milliseconds.
     ///     - completion: Callback function to return the RecaptchaClient or an error.
     @available(*, deprecated, message: "Use fetchClient api instead")
-    static func getClient(withSiteKey siteKey: String, withTimeout timeout: Double, completion: @escaping (RCIClientProtocol?, Error?) -> Void){
+    public static func getClient(withSiteKey siteKey: String, withTimeout timeout: Double, completion: @escaping (RCIClientProtocol?, Error?) -> Void){
         #if canImport(RecaptchaEnterprise)
             Recaptcha.getClient(withSiteKey: siteKey, withTimeout: timeout, completion: completion)
         #else
@@ -50,7 +50,7 @@ enum RCIClientFactory {
     ///     - siteKey: reCAPTCHA Site Key for the app.
     ///     - completion: Callback function to return the RCIClientProtocol or an error.
     @available(*, deprecated, message: "Use fetchClient api instead")
-    static func getClient(withSiteKey siteKey: String, completion: @escaping (RCIClientProtocol?, Error?) -> Void){
+    public static func getClient(withSiteKey siteKey: String, completion: @escaping (RCIClientProtocol?, Error?) -> Void){
         #if canImport(RecaptchaEnterprise)
             Recaptcha.getClient(withSiteKey: siteKey, completion: completion)
         #else
@@ -65,7 +65,7 @@ enum RCIClientFactory {
     /// - Parameters:
     ///   - siteKey: reCAPTCHA Site Key for the app.
     ///   - completion: Callback function to return the RCIClientProtocol or an error.
-    static func fetchClient(withSiteKey siteKey: String, completion: @escaping (RCIClientProtocol?, Error?) -> Void){
+    public static func fetchClient(withSiteKey siteKey: String, completion: @escaping (RCIClientProtocol?, Error?) -> Void){
         #if canImport(RecaptchaEnterprise)
             Recaptcha.fetchClient(withSiteKey: siteKey, completion: completion)
         #else
@@ -81,7 +81,7 @@ enum RCIClientFactory {
     ///   - siteKey: reCAPTCHA Site Key for the app.
     /// - Returns: A RCIClientProtocol used to retrieve reCAPTCHA tokens.
     @available(iOS 13, *)
-    static func fetchClient(withSiteKey siteKey: String) async throws -> RCIClientProtocol {
+    public static func fetchClient(withSiteKey siteKey: String) async throws -> RCIClientProtocol {
         #if canImport(RecaptchaEnterprise)
             return try await Recaptcha.fetchClient(withSiteKey: siteKey)
         #else

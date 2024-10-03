@@ -15,7 +15,7 @@
 import Foundation
 
 /// Interface to interact with reCAPTCHA.
-protocol RCIClientProtocol {
+public protocol RCIClientProtocol {
     
     /// Executes reCAPTCHA on a user action.
     ///
@@ -61,7 +61,7 @@ protocol RCIClientProtocol {
 }
 
 /// Errors throw by the Recaptcha Interop module
-enum RCIError: Error {
+public enum RCIError: Error {
     
     /// In case a method is called without the RecaptchaEnterprise library being imported.
     case recaptchaEnterpriseNotImported
