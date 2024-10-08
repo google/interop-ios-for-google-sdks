@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RecaptchaInterop'
-  s.version          = '100.0.0'
+  s.version          = '101.0.0'
   s.summary          = 'Interfaces that allow Firebase SDKs to use RecaptchaEnterprise functionality.'
 
   s.description      = <<-DESC
@@ -17,10 +17,11 @@ Pod::Spec.new do |s|
     :git => 'https://github.com/google/interop-ios-for-google-sdks.git',
     :tag => 'CocoaPods-' + s.version.to_s
   }
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
 
   base_dir = "RecaptchaEnterprise/RecaptchaInterop/"
 
-  s.source_files = base_dir + '**/*.[hm]'
-  s.public_header_files = base_dir + 'Public/RecaptchaInterop/*.h'
+  s.source_files = base_dir + '*.swift'
+
+  s.pod_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => ' $(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/RecaptchaEnterprise"'}
 end

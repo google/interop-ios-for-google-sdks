@@ -29,8 +29,7 @@ let package = Package(
   targets: [
     .target(
       name: "RecaptchaInterop",
-      path: "RecaptchaEnterprise/RecaptchaInterop",
-      publicHeadersPath: "Public"
+      path: "RecaptchaEnterprise/RecaptchaInterop"
     ),
     .testTarget(
       name: "SwiftImportsTest",
