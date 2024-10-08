@@ -24,5 +24,4 @@ Pod::Spec.new do |s|
   s.source_files = base_dir + '*.swift'
 
   s.pod_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => ' $(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/RecaptchaEnterprise"'}
-  s.weak_framework = 'RecaptchaEnterprise'
 end
