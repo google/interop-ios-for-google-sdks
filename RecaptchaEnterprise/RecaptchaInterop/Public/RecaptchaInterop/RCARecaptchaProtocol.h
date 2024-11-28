@@ -58,6 +58,19 @@ NS_ASSUME_NONNULL_BEGIN
                                        NSError *_Nullable error))completion
     NS_SWIFT_NAME(getClient(withSiteKey:completion:));
 
+/**
+ * Builds a new reCAPTCHA Client for the given Site Key.
+ *
+ * The SDK currently supports one Site Key. Passing a different Site Key will
+ * throw an exception.
+ *
+ * @param siteKey reCAPTCHA Site Key for the app.
+ * @param completion Callback function to return the RecaptchaClient or an error.
+ */
++ (void)fetchClientWithSiteKey:(nonnull NSString *)siteKey
+                  completion:(void (^)(id<RCARecaptchaClientProtocol> _Nullable recaptchaClient,
+                                       NSError *_Nullable error))completion
+    NS_SWIFT_NAME(fetchClient(withSiteKey:completion:));
 @end
 
 NS_ASSUME_NONNULL_END
