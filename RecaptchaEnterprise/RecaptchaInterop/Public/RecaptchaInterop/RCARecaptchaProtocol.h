@@ -68,8 +68,8 @@ NS_ASSUME_NONNULL_BEGIN
  * @param completion Callback function to return the RecaptchaClient or an error.
  */
 + (void)fetchClientWithSiteKey:(nonnull NSString *)siteKey
-                  completion:(void (^)(id<RCARecaptchaClientProtocol> _Nullable recaptchaClient,
-                                       NSError *_Nullable error))completion
+                    completion:(void (^)(id<RCARecaptchaClientProtocol> _Nullable recaptchaClient,
+                                         NSError *_Nullable error))completion
     NS_SWIFT_NAME(fetchClient(withSiteKey:completion:));
 @end
 
