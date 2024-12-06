@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RecaptchaInterop'
-  s.version          = '100.0.0'
+  s.version          = '101.0.0'
   s.summary          = 'Interfaces that allow Firebase SDKs to use RecaptchaEnterprise functionality.'
 
   s.description      = <<-DESC
