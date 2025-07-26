@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
     :tag => 'CocoaPods-' + s.version.to_s
   }
   s.ios.deployment_target = '11.0'
+  s.osx.deployment_target = '10.13'
 
   base_dir = "RecaptchaEnterprise/RecaptchaInterop/"
 
